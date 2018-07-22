@@ -35,6 +35,17 @@
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp
 
+## V2 版本说明
+```javascript
+    1 : 采用 vue-cli 3.0 初始化项目
+    
+    2 : 采用css扩展语言scss
+
+    3 : 抛弃v1版本采用ydui的框架，v2版本采用Vant UI框架
+
+    4 : 抽离API接口，对VUEX模块化管理
+
+```
 ### 使用
 ```javascript
  1 : git clone 
@@ -48,3 +59,13 @@ https://github.com/PDKSophia/DuApp
 
  [ 注意 ] ：端口修改在vue.config.js中，这里的端口号是3750
 ```
+
+## 其他信息
+
+API接口是在github上找的，包括QQ音乐的API也是在github上找的
+
+免费开源使用。
+
+版权所有Copyright © 2018 by PDK (http://www.pengdaokuan.cn)
+
+All rights reserved。

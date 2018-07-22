@@ -11,6 +11,11 @@ Vue.use(VueLazyLoad,{
   preLoad: 1.3,
   attempt: 1
 })
+// 引入Vant框架
+import Vant from 'vant';
+import 'vant/lib/vant-css/index.css';
+Vue.use(Vant);
+
 Vue.config.productionTip = false
 
 new Vue({

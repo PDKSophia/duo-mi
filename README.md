@@ -33,7 +33,7 @@
 > Node版本v10.0以上
 
 ## V1 版本移步
-https://github.com/PDKSophia/DuApp/blob/master/vue/README.md
+https://github.com/PDKSophia/DuApp
 
 ### 使用
 ```javascript

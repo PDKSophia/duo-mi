@@ -2,8 +2,6 @@
 
 > 之前版本代码比较复杂和vuex的使用比较简单，这里对之前的v1版本废弃，使用此v2版本
 
-> 后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
-
 ## 技术栈
 + Vue-cli
 + Vuex
@@ -35,6 +33,9 @@
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp
 
+## V1 版本演示
+http://www.pengdaokuan.cn/DuApp
+
 ## V2 版本说明
 ```javascript
     1 : 采用 vue-cli 3.0 初始化项目
@@ -48,8 +49,7 @@ https://github.com/PDKSophia/DuApp
 ```
 ### 使用
 ```javascript
- 1 : git clone 
-          // 克隆项目
+ 1 : git clone          // 克隆项目
 
  2 : cd duo-mi          // 进入目录
 
@@ -61,6 +61,8 @@ https://github.com/PDKSophia/DuApp
 ```
 
 ## 其他信息
+
+后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
 
 API接口是在github上找的，包括QQ音乐的API也是在github上找的
 

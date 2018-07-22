@@ -7,6 +7,7 @@
 ## 技术栈
 + Vue-cli
 + Vuex
++ Vant
 + Axios
 + Vue-router
 + SCSS 
@@ -31,35 +32,13 @@
 ## 项目环境
 > Node版本v10.0以上
 
-## 部分需求讲解
+## V1 版本移步
+https://github.com/PDKSophia/DuApp/blob/master/vue/README.md
 
-#### 1 . 从详情页返回到列表页，回到原位置
-```javascript
-    1 . 在 route / index.js 中定义mode为history
-    
-    2 . 给首页meta一个keepAlive属性进行缓存
-
-    3 . 在展示商品的组件中，定义 scrollTop ，用户回到原位置，具体看代码
-
-    4 . 注意，这里如果不设置keepAlive缓存可能会导致无法回到原位置，因为数据是进来加载更多，所以每次回到列表页会执行获取数据一次，所以可能会导致无法回到原位置
-```
-
-#### 2 . 加载更多
-```javascript
-    1 . 由于waterfall组件是基础组件，多页面import引入使用
-
-    2 . vuex定义一个TypeCate用于区分当前选中的分类，props传入数据给waterfall
-
-    3 . 加载更多时，根据vuex 中的TypeCate 请求对应种类的数据，并把数据存到vuex，保证数据的及时更新和有效
-```
-
-#### 3 . 多图上传
-```javascript
-    1 . formdata通过getAll('') 来查看某一属性， 比如formdata.getAll('title')
-```
 ### 使用
 ```javascript
- 1 : git clone          // 克隆项目
+ 1 : git clone 
+          // 克隆项目
 
  2 : cd duo-mi          // 进入目录
 

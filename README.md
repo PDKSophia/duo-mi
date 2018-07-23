@@ -30,6 +30,12 @@
 ## 项目环境
 > Node版本v10.0以上
 
+## 部分图片展示
+![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_1.png)
+![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png)
+![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png)
+![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_4.png)
+
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp
 
@@ -59,6 +65,14 @@ http://www.pengdaokuan.cn/DuApp
 
  [ 注意 ] ：端口修改在vue.config.js中，这里的端口号是3750
 ```
+### 阶段性 (由于还要上班以及其他事情，所以重构进度稍微有点慢)
++ 7.20 初始化项目，开始重构，安装各依赖，搭好架构
+
++ 7.21 对比各UI框架，看之前v1版本代码，凭自己审美设计APP设计图，新增全局tool.js以及api的抽离
+
++ 7.22 新增icon图标，新增首页以及书影音入口页
+
++ 7.23 新增电影列表页以及电影详情页，api请求处理，vuex数据模块化，根据得分计算star值
 
 ## 其他信息
 

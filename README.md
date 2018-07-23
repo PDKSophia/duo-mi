@@ -31,10 +31,10 @@
 > Node版本v10.0以上
 
 ## 部分图片展示
-![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_1.png)
-![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png)
-![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png)
-![image](https://github.com/PDKSophia/duo-mi/raw/master/image/d_4.png)
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_1.png" width="300" height="650" style="margin-right:50px;"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" width="300" height="650" style="margin-right:50px"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" width="300" height="650" style="margin-right:50px"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_4.png" width="300" height="650" style="margin-right:50px;"/>
 
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp

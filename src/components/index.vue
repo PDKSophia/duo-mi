@@ -108,7 +108,7 @@ export default {
         }
     },
     created () {
-        // this.$tool.initLoading('正在初始化', false, 1500)
+        this.$tool.initLoading('正在初始化', false, 1500)
     }
 }
 </script>

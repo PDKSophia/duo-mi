@@ -2,11 +2,11 @@
     <div class="dm-flex-cell">
         <div class="tabar-nav">
         	<img src="../../assets/tab/times.png" />
-        	<p class="nav-label">多米日历</p>
+        	<p class="nav-label">多米时间</p>
         </div>
         <div class="tabar-nav">
         	<img src="../../assets/tab/hot.png" />
-        	<p class="nav-label">多米日历</p>
+        	<p class="nav-label">多米故事</p>
         </div>
         <div class="tabar-nav">
         	<img src="../../assets/tab/calendar.png" />
@@ -14,7 +14,7 @@
         </div>
         <div class="tabar-nav">
         	<img src="../../assets/tab/shop.png" />
-        	<p class="nav-label">多米日历</p>
+        	<p class="nav-label">多米商场</p>
         </div>
     </div>
 </template>

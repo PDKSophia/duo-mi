@@ -1,23 +1,38 @@
 <template>
     <div>
         <van-tabbar v-model="active">
-            <van-tabbar-item icon="shop">标签</van-tabbar-item>
-            <van-tabbar-item icon="chat" dot>标签</van-tabbar-item>
-            <van-tabbar-item icon="records" info="5">标签</van-tabbar-item>
-            <van-tabbar-item icon="gold-coin" info="20">标签</van-tabbar-item>
+            <van-tabbar-item icon="home" dot @click="handleToLink('', 0)">首页</van-tabbar-item>
+            <van-tabbar-item icon="points" @click="handleToLink('media', 1)">书影音</van-tabbar-item>
+            <van-tabbar-item icon="contact" info="20" @click="handleToLink('user', 2)">个人</van-tabbar-item>
         </van-tabbar>
     </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
+    computed : mapState({
+        current_active : state => state.global.current_active
+    }),
     data () {
         return {
             active : 0
         }
     },
+    methods : {
+        ...mapActions([
+            'setCurrentActive'
+        ]),
+        handleToLink (type, active_index) {
+            this.$router.push({
+                path : `/${type}`
+            })
+            this.setCurrentActive(active_index)
+        }
+    },
     mounted () {
-        sessionStorage.setItem('active', this.active)
+        this.active = this.current_active
     }
 }
 </script>

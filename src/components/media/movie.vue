@@ -35,14 +35,14 @@
             <div class="md-main-box" v-if="ApiFinish">
                 <div class="media-header">
                     <p class="md-titles">正在上映</p>
-                    <p class="md-more">更多<i class="fa fa-angle-right"></i></p>
+                    <p class="md-more" @click="hanleMore('hot')">更多<i class="fa fa-angle-right"></i></p>
                 </div>
                 <single-movie :DataList="MovieHotList"></single-movie>
             </div>
             <div class="md-main-box" v-if="ApiFinish">
                 <div class="media-header">
                     <p class="md-titles">豆瓣TOP / 前20</p>
-                    <p class="md-more">更多<i class="fa fa-angle-right"></i></p>
+                    <p class="md-more" @click="hanleMore('top')">更多<i class="fa fa-angle-right"></i></p>
                 </div>
                 <single-movie :DataList="MovieTopList"></single-movie>
             </div>
@@ -94,6 +94,11 @@ export default {
                 }, 3000)
             }
             this.changeRequestApi(false)
+        },
+        hanleMore (type) {
+            this.$router.push({
+                path : `/media/movie_more/${type}`
+            })
         }
     },
     created () {

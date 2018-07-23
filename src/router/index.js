@@ -9,6 +9,7 @@ import DuoMiMediaMoviePage from '@/components/media/movie'
 import DuoMiMediaMusicPage from '@/components/media/music'
 import DuoMiMediaStoryPage from '@/components/media/story'
 import DuoMiMediaDetailPage from '@/components/media/movie_detail'
+import DuoMiMediaMorePage from '@/components/media/movie_more'
 
 Vue.use(Router)
 
@@ -52,6 +53,11 @@ export default new Router({
                     path : 'movie_detail/:m_id',
                     name : 'detaile',
                     component : DuoMiMediaDetailPage
+                },
+                {
+                    path : 'movie_more/:movie_type',
+                    name : 'movie_type',
+                    component : DuoMiMediaMorePage
                 }
             ]
         }

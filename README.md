@@ -26,6 +26,7 @@
 - [ ] 详情页回列表滚动至原位置
 - [ ] 多图上传 + 实时预览 + 删除
 - [ ] 加载更多
+- [ ] 获取天气
 
 ## 项目环境
 > Node版本v10.0以上
@@ -51,7 +52,16 @@ http://www.pengdaokuan.cn/DuApp
 
     3 : 抛弃v1版本采用ydui的框架，v2版本采用Vant UI框架
 
-    4 : 抽离API接口，对VUEX模块化管理
+    4 : 抽离api接口，对vuex模块化管理
+
+```
+
+## 其他说明
+```javascript 
+    「 天气说明 」 
+    1 : 城市默认为成都，由于我并未做获取GPS并且转换成城市，api获取天气需传cityId，而接口中的cityId有300多条，所以这边想获取某城市天气需要自己搜索切换查询哦 ～
+
+    2 : 直接请求时候，遇到跨域问题，这里采用vue-jsonp 解决跨域
 
 ```
 ### 使用
@@ -75,6 +85,10 @@ http://www.pengdaokuan.cn/DuApp
 
 + 7.23 新增电影列表页、电影详情页、电影更多页，api请求处理，vuex数据模块化，根据得分计算star值
 
++ 7.24 新增个人页面和音乐界面
+
++ 7.25 新增天气页面，获取各地区天气数据
+
 ## 其他信息
 
 后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
@@ -86,3 +100,4 @@ API接口是在github上找的，包括QQ音乐的API也是在github上找的
 版权所有Copyright © 2018 by PDK (http://www.pengdaokuan.cn)
 
 All rights reserved。
+ 

@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import GoBack from '../basicComponents/top_header'
-import ListMore from '../basicComponents/listmore'
+import GoBack from '../../basicComponents/top_header'
+import ListMore from '../../basicComponents/listmore'
 import { mapState } from 'vuex'
 
 export default {

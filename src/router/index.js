@@ -5,12 +5,16 @@ import DuoMiIndexPage from '@/components/index'
 // import media files
 import DuoMiMediaRoutePage from '@/components/media/route'
 import DuoMiMediaMAreaPage from '@/components/media/area'
-import DuoMiMediaMoviePage from '@/components/media/movie'
-import DuoMiMediaMusicPage from '@/components/media/music'
-import DuoMiMediaStoryPage from '@/components/media/story'
-import DuoMiMediaDetailPage from '@/components/media/movie_detail'
-import DuoMiMediaMorePage from '@/components/media/movie_more'
+import DuoMiMediaMMoviePage from '@/components/media/movie/movie'
+import DuoMiMediaMDetailPage from '@/components/media/movie/movie_detail'
+import DuoMiMediaMMorePage from '@/components/media/movie/movie_more'
+import DuoMiMediaMusicPage from '@/components/media/music/music'
+import DuoMiMediaStoryPage from '@/components/media/story/story'
 
+// import user files
+import DuoMiUserRoutePage from '@/components/user/route'
+import DuoMiUserIndexPage from '@/components/user/index'
+import DuoMiUserWeatherPage from '@/components/user/weather/weather'
 Vue.use(Router)
 
 export default new Router({
@@ -37,7 +41,7 @@ export default new Router({
                 {
                     path : 'movie',
                     name : 'movie',
-                    component : DuoMiMediaMoviePage,
+                    component : DuoMiMediaMMoviePage,
                 },
                 {
                     path : 'music',
@@ -52,12 +56,36 @@ export default new Router({
                 {
                     path : 'movie_detail/:m_id',
                     name : 'detaile',
-                    component : DuoMiMediaDetailPage
+                    component : DuoMiMediaMDetailPage
                 },
                 {
                     path : 'movie_more/:movie_type',
                     name : 'movie_type',
-                    component : DuoMiMediaMorePage
+                    component : DuoMiMediaMMorePage
+                }
+            ]
+        },
+        {
+            path : '/user',
+            name : 'userroute',
+            component : DuoMiUserRoutePage,
+            redirect : '/user/introduce',
+            children : [
+                {
+                    path : 'introduce',
+                    name : 'introduce',
+                    component : DuoMiUserIndexPage,
+                    meta : {
+                        keepAlive : false
+                    }
+                },
+                {
+                    path : 'weather',
+                    name : 'weather',
+                    component : DuoMiUserWeatherPage,
+                    meta : {
+                        keepAlive : false
+                    }
                 }
             ]
         }

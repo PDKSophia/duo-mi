@@ -5,7 +5,8 @@ const state = {
     current_active : 0,
     requestApiFlag : true,
     MovieHotList : [],
-    MovieTopList : []
+    MovieTopList : [],
+    MusicList : []
 }
 
 const actions = {
@@ -23,6 +24,10 @@ const actions = {
 
     setMovieTopList ({commit}, JsonData) {
         commit(types.SET_TOP_MOVIE_LIST, {data: JsonData})
+    },
+
+    setMusicList ({commit}, JsonData) {
+        commit(types.SET_ONE_MUSIC_LIST, {data: JsonData})
     }
 }
 
@@ -73,6 +78,21 @@ const mutations = {
                 year : item.year
             })
         })
+    },
+
+    [types.SET_ONE_MUSIC_LIST] (state, payload) {
+        payload.data.map((item)=>{
+            state.MusicList.push({
+                title : item.title,
+                author : item.author.user_name,
+                forward : item.forward,
+                img_url : item.img_url,
+                post_date : ((item.post_date).substring(0, 10)).replace(/'-'/g, '/'),
+                item_id : item.item_id,
+                volume : item.item_id
+            })
+        })
+        // console.log(state.MusicList)
     }
 }
 

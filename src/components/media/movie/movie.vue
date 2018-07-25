@@ -51,8 +51,8 @@
 </template>
 
 <script>
-import GoBack from '../basicComponents/top_header'
-import SingleMovie from '../basicComponents/single_movie'
+import GoBack from '../../basicComponents/top_header'
+import SingleMovie from '../../basicComponents/single_movie'
 import { mapState, mapActions } from 'vuex'
 
 export default {

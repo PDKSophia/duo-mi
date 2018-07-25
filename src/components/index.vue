@@ -92,6 +92,8 @@
 <script>
 import FlexCell from './basicComponents/flex_cell'
 import FooterTabBar from './basicComponents/tab_bar'
+import { mapState, mapActions } from 'vuex'
+
 export default {
     components : {
         FlexCell,
@@ -103,12 +105,23 @@ export default {
         }
     },
     methods : {
+        ...mapActions([
+            'setMusicList'
+        ]),
+        initApiAxios () {
+            this.$api.onelist().then((res1)=>{
+                this.$api.onemusiclist().then((res2)=>{
+                    this.setMusicList(res2.data.data.concat(res1.data.data))
+                })
+            })
+        },
         onSearch () {
             this.$tool.initLoading(`搜索中`, false, 1500)
         }
     },
     created () {
         this.$tool.initLoading('正在初始化', false, 1500)
+        this.initApiAxios()
     }
 }
 </script>

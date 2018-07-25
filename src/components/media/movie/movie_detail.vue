@@ -37,7 +37,7 @@
 
 <script>
 import { mapState , mapActions } from 'vuex'
-import Sstar from '../basicComponents/star'
+import Sstar from '../../basicComponents/star'
 export default {
     components : {
         Sstar
@@ -59,6 +59,7 @@ export default {
     created () {
         this.m_id = this.$route.params.m_id
         this.getMovieIntroduce()
+        this.$tool.initLoading('加载中', false, 1500)
     }
 }
 </script>

@@ -37,6 +37,9 @@
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" width="300" height="650" style="margin-right:50px"/>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_4.png" width="300" height="650" style="margin-right:50px;"/>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" width="300" height="650" style="margin-right:50px;"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_6.png" width="300" height="650" style="margin-right:50px;"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" width="300" height="650" style="margin-right:50px;"/>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" width="300" height="650" style="margin-right:50px;"/>
 
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp

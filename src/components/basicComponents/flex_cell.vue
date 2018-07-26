@@ -1,18 +1,18 @@
 <template>
     <div class="dm-flex-cell">
-        <div class="tabar-nav">
+        <div class="tabar-nav" @click="handleCell('time')">
         	<img src="../../assets/tab/times.png" />
         	<p class="nav-label">多米时间</p>
         </div>
-        <div class="tabar-nav">
+        <div class="tabar-nav" @click="handleCell('story')">
         	<img src="../../assets/tab/hot.png" />
         	<p class="nav-label">多米故事</p>
         </div>
-        <div class="tabar-nav">
+        <div class="tabar-nav" @click="handleCell('calendar')">
         	<img src="../../assets/tab/calendar.png" />
         	<p class="nav-label">多米日历</p>
         </div>
-        <div class="tabar-nav">
+        <div class="tabar-nav" @click="handleCell('shop')">
         	<img src="../../assets/tab/shop.png" />
         	<p class="nav-label">多米商场</p>
         </div>
@@ -21,7 +21,11 @@
 
 <script>
 export default {
-
+    methods : {
+        handleCell (type) {
+            this.$tool.initToastAlert ('该专区还未开发 ～' , false, 1500)
+        }
+    }
 }
 </script>
 

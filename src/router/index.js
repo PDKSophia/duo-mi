@@ -15,6 +15,9 @@ import DuoMiMediaStoryPage from '@/components/media/story/story'
 import DuoMiUserRoutePage from '@/components/user/route'
 import DuoMiUserIndexPage from '@/components/user/index'
 import DuoMiUserWeatherPage from '@/components/user/weather/weather'
+import DuoMiUserAlbumPage from '@/components/user/album/album'
+import DuoMiUserGameRoutePage from '@/components/user/game/route'
+import DuoMiUserGameListPage from '@/components/user/game/list'
 Vue.use(Router)
 
 export default new Router({
@@ -86,6 +89,27 @@ export default new Router({
                     meta : {
                         keepAlive : false
                     }
+                },
+                {
+                    path : 'album',
+                    name : 'album',
+                    component : DuoMiUserAlbumPage,
+                    meta : {
+                        keepAlive : false
+                    }
+                },
+                {
+                    path : 'game',
+                    name : 'route',
+                    component : DuoMiUserGameRoutePage,
+                    redirect : '/user/game/list',
+                    children : [
+                        {
+                            path : 'list',
+                            name : 'gamelist',
+                            component : DuoMiUserGameListPage
+                        }
+                    ]
                 }
             ]
         }

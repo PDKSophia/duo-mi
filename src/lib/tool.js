@@ -1,5 +1,7 @@
 import { Toast, Dialog } from 'vant'
 import AllCity from './city'
+import WeatherCate from './weather'
+
 export default {
     /**
      * loading 加载框
@@ -29,14 +31,13 @@ export default {
     },
 
     /**
-     * 根据分数给星星
+     * 警告窗
     */
     initToastAlert : (message, mask=true, time) => {
         Toast({
             message: message,
             mask : mask,
             duration : time
-            
         })
     },
     /**
@@ -58,5 +59,12 @@ export default {
             } 
         })
         return res;
-    }
+    },
+
+    /**
+     * 根据不同天气类型返回不同背景色
+    */
+   BgWeatherColor : () => {
+       console.log(WeatherCate)
+   }
 }

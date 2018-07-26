@@ -12,10 +12,20 @@ export default {
      * @returns {*}
     */
     getMovieHotList: () => {
-        return axios.get(`${config.pdk_url}/MovieRanking`, {
-            params : {
-                type : 'hot'
-            }
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.pdk_url}/MovieRanking`,
+                params : {
+                    type : 'hot'
+                }
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=> {
+                reject(err)
+            })
         })
     },
 
@@ -24,10 +34,20 @@ export default {
      * @returns {*}
     */
    getMovieTopList: () => {
-        return axios.get(`${config.pdk_url}/MovieRanking`, {
-            params : {
-                type : 'top'
-            }
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.pdk_url}/MovieRanking`,
+                params : {
+                    type : 'top'
+                }
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=> {
+                reject(err)
+            })
         })
     },
 
@@ -36,11 +56,21 @@ export default {
      * @returns {*}
     */
    getMovieIntroduce: (m_id) => {
-        return axios.get(`${config.pdk_url}/ProductToDoShow`, {
-            params : {
-                type : 'movie',
-                id : m_id
-            }
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.pdk_url}/ProductToDoShow`,
+                params : {
+                    type : 'movie',
+                    id : m_id
+                }
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=> {
+                reject(err)
+            })
         })
     },
 
@@ -49,7 +79,18 @@ export default {
      * @returns {*}
     */
     onemusiclist : () => {
-        return axios.get(`${config.one_music_list}`)
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.one_music_list}`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=> {
+                reject(err)
+            })
+        })
     },
 
     /**
@@ -57,13 +98,37 @@ export default {
      * @returns {*}
     */
     onelist : () => {
-        return axios.get(`${config.one_list}`)
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.one_list}`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=> {
+                reject(err)
+            })
+        })
     },
 
     /** 
      * 调用魅族天气API，返回城市天气信息
     */
-    getCityWeather : (cityid) => {
-        return axios.get(`/m_api/listWeather?cityIds=${cityid}`, {})
+    getCityWeather : (url) => {
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                headers : {
+                    'Content-type' : 'application/x-www-form-urlencoded; charset=UTF-8'
+                },
+                timeout : 100000,
+                url : url
+            }).then((res)=>{
+                resolve(res.data)
+            }).catch((err)=>{
+                reject(err)
+            })
+        })
     }
 }

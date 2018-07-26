@@ -16,78 +16,57 @@
                 placeholder="例如 : 北京 "
             />
             </van-dialog>
-        <div class="bg-weather">
-            <p class="cate">强风暴雨</p>
-            <p class="city">成都市</p>
-            <p class="num">33°</p>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
+        <div v-for="(item, index) in CityWeatherInfo" :key="index">
+            <div class="bg-weather">
+                <p class="cate">{{ item.weatherDetailsInfo.weather3HoursDetailsInfos[0].weather }}</p>
+                <p class="city">{{ item.city }}</p>
+                <p class="num" v-if="item.weatherDetailsInfo.weather3HoursDetailsInfos[0].lowerestTemperature != item.weatherDetailsInfo.weather3HoursDetailsInfos[0].highestTemperature">
+                    {{ item.weatherDetailsInfo.weather3HoursDetailsInfos[0].lowerestTemperature }}° ~ 
+                    {{ item.weatherDetailsInfo.weather3HoursDetailsInfos[0].highestTemperature }}°
                 </p>
+                <p class="num" v-else>{{ item.weatherDetailsInfo.weather3HoursDetailsInfos[0].lowerestTemperature }}°</p>
             </div>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
-                </p>
-            </div>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
-                </p>
-            </div>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
-                </p>
-            </div>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
-                </p>
-            </div>
-        </div>
-        <div class="after-day-weather">
-            <div class="weather-cell">
-                <p class="which-day">星期二</p>
-                <p class="temperature">
-                    <span><img src="../../../assets/weather.png" alt=""></span>10° ～ 15°
-                </p>
+            <div class="after-day-weather" v-for="(wea, nums) in item.weathers" :key="nums">
+                <div class="weather-cell">
+                    <p class="which-day">{{ wea.week }}</p>
+                    <p class="temperature">
+                        <span>
+                            <!-- <img src="../../../assets/weather.png" alt=""> -->
+                        </span>
+                        {{ wea.temp_night_c }}° ～ {{ wea.temp_day_c }}°
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
 export default {
     methods : {
+        ...mapActions([
+            'setCityWeatherData',
+            'NeedRequireWeather'
+        ]),
         handleDialog () {
             this.showDialog = true
         },
         CityApi (datas) {
             console.log('请求数据，获取 : ' + datas.city + '天气')
+            this.$api.getCityWeather(`/m_api/app/weather/listWeather?cityIds=${datas.cityid}`).then((res)=>{
+                if(res.code == 200) {
+                    this.setCityWeatherData(res.value)
+                } else {
+                    this.$tool.initToastAlert(`${res.message}`, false, 1500)
+                }
+            })
         },
         beforeClose(action, done) {
             if (action === 'confirm') {
                 let result = this.$tool.SearchCityName(this.CityText)
-                // console.log(result)
                 if(result.cityid) {
                     this.$tool.initLoading('切换中', false, 1000)
-                    // api请求
                     this.CityApi(result)
                 } else {
                     this.$tool.initToastAlert('抱歉，请输入市级城市哦～', false, 1500)
@@ -106,7 +85,20 @@ export default {
             confirmText : '切换'         // 确认按钮的文案
         }
     },
-    created () {
+    computed : mapState({
+        CityWeatherInfo : state => state.other.CityWeatherInfo,
+        isRequireWeather : state => state.other.isRequireWeather
+    }),
+    mounted () {
+        if(this.isRequireWeather) {
+            this.$tool.initLoading('获取中', false, 1000)
+            this.CityApi({
+                "city": "北京",
+                "cityid": "101010100"
+            })
+            this.NeedRequireWeather()
+            this.$tool.BgWeatherColor()
+        }
     }
 }
 </script>

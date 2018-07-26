@@ -5,10 +5,11 @@ module.exports = {
         host : 'localhost',
         proxy : {
             '/m_api' : {
-                target : 'http://aider.meizu.com/app/weather/',     // 接口域名
-                ws : true,
-                secure: false,  // 如果是https接口，需要配置这个参数
+                target : 'http://aider.meizu.com/',     // 接口域名
                 changeOrigin : true,        // 是否跨域
+                pathRewrite : {
+                    '^/m_api' : ''
+                }
             }
         }
     }

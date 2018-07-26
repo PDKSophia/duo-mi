@@ -9,7 +9,7 @@
                 <p class="username">彭道宽</p>
             </div>
             <div class="ability-box">
-                <div v-for="(item, index) in UserOtherIcon" :key="index">
+                <div v-for="(item, index) in UserOtherIcon" :key="index" :class="[index+1 == UserOtherIcon.length ? 'last-cell' : '']">
                     <div class="cell" @click="handleTolink(item.type)">
                         <div class="icon-left">
                             <img :src="item.icon_url" class="icon-image" alt="index">
@@ -46,15 +46,22 @@ export default {
     },
     methods : {
         handleTolink (type) {
-            this.$router.push({
-                path : `/user/${type}`
-            })
+            if(type == 'weather' || type == 'album' || type == 'game') {
+                this.$router.push({
+                    path : `/user/${type}`
+                })
+            } else {
+                this.$tool.initToastAlert('还未开放此专区', false, 1000)
+            }
         }
     }
 }
 </script>
 
 <style scoped lang="scss">
+.last-cell {
+    margin-bottom: 6.2rem;
+}
 .user-header {
     height: 15rem;
     position: relative;

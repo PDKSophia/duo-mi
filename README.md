@@ -32,14 +32,6 @@
 > Node版本v10.0以上
 
 ## 部分图片展示
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_1.png" width="300" height="650" style="margin-right:50px;"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" width="300" height="650" style="margin-right:50px"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" width="300" height="650" style="margin-right:50px"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_4.png" width="300" height="650" style="margin-right:50px;"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" width="300" height="650" style="margin-right:50px;"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_6.png" width="300" height="650" style="margin-right:50px;"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" width="300" height="650" style="margin-right:50px;"/>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" width="300" height="650" style="margin-right:50px;"/>
 
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp
@@ -91,6 +83,8 @@ http://www.pengdaokuan.cn/DuApp
 + 7.24 新增个人页面和音乐界面
 
 + 7.25 新增天气页面，获取各地区天气数据
+
++ 7.26 新增游戏页面，相册专辑页面
 
 ## 其他信息
 

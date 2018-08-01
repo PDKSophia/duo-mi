@@ -122,6 +122,9 @@ export default {
     created () {
         this.$tool.initLoading('正在初始化', false, 1500)
         this.initApiAxios()
+        this.$api.getBlogArticle(`/blog`).then((res)=>{
+            console.log(res)
+        })
     }
 }
 </script>

@@ -10,6 +10,13 @@ module.exports = {
                 pathRewrite : {
                     '^/m_api' : ''
                 }
+            },
+            '/blog' : {
+                target : 'http://blog.pengdaokuan.cn:4001/blog',     // 接口域名
+                changeOrigin : true,            // 是否跨域
+                pathRewrite : {
+                    '^/blog' : ''
+                }
             }
         }
     }

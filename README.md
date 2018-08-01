@@ -86,6 +86,8 @@ http://www.pengdaokuan.cn/DuApp
 
 + 7.26 新增游戏页面，相册专辑页面
 
++ 7.27 - 8.1准备一家公司的面试以及博客的搭建和写文章 (个人博客地址在下边)
+
 ## 其他信息
 
 后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
@@ -98,3 +100,8 @@ API接口是在github上找的，包括QQ音乐的API也是在github上找的
 
 All rights reserved。
  
+## 相关链接
+
+博客 : http://blog.pengdaokuan.cn:4001
+
+掘金 : https://juejin.im/user/594ca8a35188250d892f4139

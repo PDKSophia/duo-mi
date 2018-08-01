@@ -130,5 +130,23 @@ export default {
                 reject(err)
             })
         })
-    }
+    },
+
+    /**
+     * 调用个人博客接口
+    */
+   getBlogArticle : (url) => {
+       return new Promise((resolve, reject)=>{
+           axios({
+               method : 'get',
+               url : url
+           })
+           .then((res)=>{
+               resolve(res)
+           })
+           .catch((err)=>{
+               reject(err)
+           })
+       })
+   }
 }

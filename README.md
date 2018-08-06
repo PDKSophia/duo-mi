@@ -32,8 +32,6 @@
 ## 项目环境
 > Node版本v10.0以上
 
-## 部分图片展示
-
 ## V1 版本移步
 https://github.com/PDKSophia/DuApp
 
@@ -95,6 +93,18 @@ http://www.pengdaokuan.cn/DuApp
 + 8.2 - 8.5 二面依图，给自己休息放假两天
 
 + 8.6 重改电影详情页的样式，新增壁纸页面，新增商城页面以及商品详情页
+
+-----
+
+## 部分图片展示
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_11.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_14.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" height=500>
 
 ## 其他信息
 

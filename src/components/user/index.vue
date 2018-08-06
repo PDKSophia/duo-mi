@@ -2,10 +2,10 @@
     <div>
         <div class="user-header">
             <div class="bg-mask">
-                <img src="http://image.wufazhuce.com/Fn7saSR-ajtrYi5nnyvZ8eYwynig" class="avatar-image" alt="avatar" >
+                <img src="http://image.wufazhuce.com/FpebHlW68X5IoBuyB9CjUcNkVGui" class="avatar-image" alt="avatar" >
             </div>
             <div class="avatar-username">
-                <img src="http://image.wufazhuce.com/Fn7saSR-ajtrYi5nnyvZ8eYwynig" class="avatar-image" alt="avatar" >
+                <img src="http://image.wufazhuce.com/FpebHlW68X5IoBuyB9CjUcNkVGui" class="avatar-image" alt="avatar" >
                 <p class="username">彭道宽</p>
             </div>
             <div class="ability-box">
@@ -46,7 +46,7 @@ export default {
     },
     methods : {
         handleTolink (type) {
-            if(type == 'weather' || type == 'album' || type == 'game') {
+            if(type == 'weather' || type == 'album' || type == 'game' || type == 'shop') {
                 this.$router.push({
                     path : `/user/${type}`
                 })
@@ -68,6 +68,7 @@ export default {
     .bg-mask {
         position: absolute;
         z-index : 100;
+        width: 100%;
         -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
         filter: blur(4px);
         img{

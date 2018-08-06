@@ -1,10 +1,13 @@
 <template>
     <div>
-        <div class="top-nav-bar">
-            <i class="fa fa-chevron-left" @click="$router.go(-1)"></i>
-        </div>
-        <div class="movie-images">
-            <img class="img_class" :src="MovieIntro.pic" alt="">
+        <div class="bg-filter">
+            <div class="bg-mask">
+                <img :src="MovieIntro.pic" class="avatar-image" alt="加载中..." >
+            </div>
+            <div class="movie-image">
+                <i class="fa fa-chevron-left" @click="$router.go(-1)"></i>
+                <img :src="MovieIntro.pic" class="avatar-image" alt="加载中..." >
+            </div>
         </div>
         <div class="introduce">
             <div class="intro-flex-box">
@@ -65,28 +68,41 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.top-nav-bar {
-    background-color: #5c452f;
-    height: 3.5rem;
-    i{
-        font-size: 1.6rem;
-        color: white;
-        margin-top: 1rem;
-        margin-left : .8rem;
+.bg-filter{
+    height: 18rem;
+    position: relative;
+    .bg-mask {
+        position: absolute;
+        z-index : 100;
+        width: 100%;
+        -webkit-filter: blur(4px); /* Chrome, Safari, Opera */
+        filter: blur(4px);
+        img{
+            width: 100%;
+            height: 18rem;
+        }
     }
-}
-.movie-images {
-    height: 16rem;
-    background-color: #5c452f;
-    padding-top: 1rem;
-    text-align: center; 
-    img.img_class{
-        width: 10rem;
-        height: 14.5rem;
+    .movie-image {
+        position: absolute;
+        width: 100%;
+        z-index: 200;
+        padding-top: 2rem; 
+        text-align: center;
+        img{
+            width: 10rem;
+            margin-left: -1rem;
+            height: 13rem;
+        }
+        i{
+            font-size: 1.4rem;
+            margin-left: .5rem;
+            color: white;
+            float: left;
+        }
     }
 }
 .introduce {
-    background-color: rgba(250, 238, 238, 0.966);
+    background-color:#f7f7f7f6;
     padding: 1.2rem;
     padding-bottom: 3rem;
     .intro-flex-box {
@@ -99,12 +115,13 @@ export default {
             width: 60%;
             button.db_select {
                 margin-top: .6rem;
-                background-color: rgb(231, 188, 135);
+                background-color: #de9d44ab;
                 border: none;
                 padding: .3rem .4rem;
                 color: rgb(170, 103, 21);
                 font-size: .72rem;
                 border-radius: 4px;
+                border: 1px solid white;
             }
             p.pro_title{
                 font-size: 1.15rem;
@@ -176,7 +193,7 @@ export default {
 }
 @media screen and (min-width: 360px) and (max-width: 380px){
     .introduce {
-        padding-bottom: 8rem;
+        padding-bottom: 11rem;
     }
 }
 </style>

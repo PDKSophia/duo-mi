@@ -9,7 +9,7 @@ const state = {
         },
         {
             icon_url : require('../../assets/tab/pic.png'),
-            label : '多米相册',
+            label : '多米壁纸',
             type : 'album'
         },
         {

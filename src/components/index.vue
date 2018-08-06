@@ -106,13 +106,17 @@ export default {
     },
     methods : {
         ...mapActions([
-            'setMusicList'
+            'setMusicList',
+            'setWallPaper'
         ]),
         initApiAxios () {
             this.$api.onelist().then((res1)=>{
                 this.$api.onemusiclist().then((res2)=>{
                     this.setMusicList(res2.data.data.concat(res1.data.data))
                 })
+            })
+            this.$api.getWallPaper('/wallpaper/category?adult=false&first=1').then((res)=>{
+                this.setWallPaper(res.data.res.category)
             })
         },
         onSearch () {
@@ -122,9 +126,6 @@ export default {
     created () {
         this.$tool.initLoading('正在初始化', false, 1500)
         this.initApiAxios()
-        this.$api.getBlogArticle(`/blog`).then((res)=>{
-            console.log(res)
-        })
     }
 }
 </script>

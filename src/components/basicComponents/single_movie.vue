@@ -2,7 +2,7 @@
     <div class="single-movie">
         <div class="movie-box">
             <div class="movie-cell" v-for="(item, index) in DataList" :key="index" @click="hanleViewMovie(item.m_id)" v-if="index < 9">
-                <img :src="item.pic" alt="">
+                <img v-lazy="item.pic" alt="">
                 <p>{{ item.title }}</p>
                 <Sstar :count="item.count" max="5" :score="item.score"></Sstar>
             </div>

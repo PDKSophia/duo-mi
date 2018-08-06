@@ -6,7 +6,9 @@ const state = {
     requestApiFlag : true,
     MovieHotList : [],
     MovieTopList : [],
-    MusicList : []
+    MusicList : [],
+    WallPaper : [],
+    DownLoadPaper : {}
 }
 
 const actions = {
@@ -28,6 +30,14 @@ const actions = {
 
     setMusicList ({commit}, JsonData) {
         commit(types.SET_ONE_MUSIC_LIST, {data: JsonData})
+    },
+
+    setWallPaper ({commit}, JsonData) {
+        commit(types.SET_WALLPAPER_LIST, {data : JsonData})
+    },
+
+    setDownLoadPaper ({commit}, JsonData) {
+        commit (types.SET_DOWN_LOAD_PAPER, {data : JsonData})
     }
 }
 
@@ -41,7 +51,7 @@ const mutations = {
     },
 
     [types.SET_HOT_MOVIE_LIST] (state, payload) {
-        payload.data.map((item, index) => {
+        payload.data.map((item) => {
             state.MovieHotList.push({
                 id : item.id,
                 directors : item.directors,
@@ -61,7 +71,7 @@ const mutations = {
     },
 
     [types.SET_TOP_MOVIE_LIST] (state, payload) {
-        payload.data.map((item, index) => {
+        payload.data.map((item) => {
             state.MovieTopList.push({
                 id : item.id,
                 directors : item.directors,
@@ -92,7 +102,24 @@ const mutations = {
                 volume : item.item_id
             })
         })
-        // console.log(state.MusicList)
+    },
+
+    [types.SET_WALLPAPER_LIST] (state, payload) {
+        payload.data.map((item) => {
+            state.WallPaper.push({
+                ename : item.ename,
+                atime : item.atime,
+                name : item.name,
+                cover : item.cover,
+                id : item.id,
+                count : item.count
+            })
+        })
+    },
+
+    [types.SET_DOWN_LOAD_PAPER] (state, payload) {
+        state.DownLoadPaper = payload.data
+        console.log(state.DownLoadPaper)
     }
 }
 

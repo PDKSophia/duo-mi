@@ -135,18 +135,69 @@ export default {
     /**
      * 调用个人博客接口
     */
-   getBlogArticle : (url) => {
-       return new Promise((resolve, reject)=>{
-           axios({
-               method : 'get',
-               url : url
-           })
-           .then((res)=>{
-               resolve(res)
-           })
-           .catch((err)=>{
-               reject(err)
-           })
-       })
-   }
+    getBlogArticle : (url) => {
+        return new Promise((resolve, reject)=>{
+            axios({
+                method : 'get',
+                url : url
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 调用壁纸接口，获取不同种类的壁纸分类
+    */
+    getWallPaper : (url) => {
+        return new Promise((resolve, reject)=>{
+            axios({
+                method : 'get',
+                url : url
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 获取某类手机壁纸下壁纸
+    */
+    getOneCateWallPaper : (url) => {
+        return new Promise((resolve, reject)=>{
+            axios({
+                method : 'get',
+                url : url
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    download_wallpaper : (id) => {
+        return new Promise((resolve, reject)=>{
+            axios({
+                method : 'get',
+                url : `http://img5.adesk.com/${id}`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    }
 }

@@ -33,13 +33,31 @@ export default {
     /**
      * 警告窗
     */
-    initToastAlert : (message, mask=true, time) => {
+    initToastAlert : (message, mask=true, time = 1500) => {
         Toast({
             message: message,
             mask : mask,
             duration : time
         })
     },
+
+    /**
+     * 警告窗，成功 / 失败
+    */
+    ToastMsgContent : (type = 'success', message, time = 1500) => {
+        if(type == 'success') {
+            Toast.success({
+                message : message,
+                duration : time
+            })
+        } else {
+            Toast.fail({
+                message : message,
+                duration : time
+            })
+        }
+    },
+
     /**
      * 根据分数给星星
     */
@@ -64,7 +82,23 @@ export default {
     /**
      * 根据不同天气类型返回不同背景色
     */
-   BgWeatherColor : () => {
-       console.log(WeatherCate)
-   }
+    BgWeatherColor : () => {
+        console.log(WeatherCate)
+    },
+
+    /**
+     * 随机获取count条数据
+    */
+    RandomSizeCount : (count, maxSize) => {
+        let arr = []
+        for(let i = 0; i < count; i++) {
+            let index = Math.floor(Math.random() * maxSize)
+            if(arr.indexOf(index) == 0) {
+                arr.unshift(0)
+            } else {
+                arr.push(index)
+            }
+        }
+        return arr;
+    }
 }

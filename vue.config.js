@@ -17,6 +17,13 @@ module.exports = {
                 pathRewrite : {
                     '^/blog' : ''
                 }
+            },
+            '/wallpaper' : {
+                target : 'http://service.picasso.adesk.com/v1/vertical',     // 接口域名
+                changeOrigin : true,            // 是否跨域
+                pathRewrite : {
+                    '^/wallpaper' : ''
+                }
             }
         }
     }

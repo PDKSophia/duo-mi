@@ -16,8 +16,13 @@ import DuoMiUserRoutePage from '@/components/user/route'
 import DuoMiUserIndexPage from '@/components/user/index'
 import DuoMiUserWeatherPage from '@/components/user/weather/weather'
 import DuoMiUserAlbumPage from '@/components/user/album/album'
+import DuoMiUserWallPaperPage from '@/components/user/album/wallpaper'
+import DuoMiUserWallViewPage from '@/components/user/album/view'
 import DuoMiUserGameRoutePage from '@/components/user/game/route'
 import DuoMiUserGameListPage from '@/components/user/game/list'
+import DuoMiShopRoutePage from '@/components/user/shop/route'
+import DuoMiShopIndexPage from '@/components/user/shop/index'
+import DuoMiShopCommodityPage from '@/components/user/shop/commodity'
 Vue.use(Router)
 
 export default new Router({
@@ -99,8 +104,18 @@ export default new Router({
                     }
                 },
                 {
+                    path : 'album/wallpaper',
+                    name : 'wallpaper',
+                    component : DuoMiUserWallPaperPage
+                },
+                {
+                    path : 'album/wallpaper/view',
+                    name : 'wallview',
+                    component : DuoMiUserWallViewPage
+                },
+                {
                     path : 'game',
-                    name : 'route',
+                    name : 'gameroute',
                     component : DuoMiUserGameRoutePage,
                     redirect : '/user/game/list',
                     children : [
@@ -108,6 +123,24 @@ export default new Router({
                             path : 'list',
                             name : 'gamelist',
                             component : DuoMiUserGameListPage
+                        }
+                    ]
+                },
+                {
+                    path : 'shop',
+                    name : 'shoproute',
+                    component : DuoMiShopRoutePage,
+                    redirect : '/user/shop/index',
+                    children : [
+                        {
+                            path : 'index',
+                            name : 'shopindex',
+                            component : DuoMiShopIndexPage
+                        },
+                        {
+                            path : 'commodity/:id',
+                            name : 'commodity',
+                            component : DuoMiShopCommodityPage
                         }
                     ]
                 }

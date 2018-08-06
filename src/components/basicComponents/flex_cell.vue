@@ -23,7 +23,13 @@
 export default {
     methods : {
         handleCell (type) {
-            this.$tool.initToastAlert ('该专区还未开发 ～' , false, 1500)
+            if(type == 'shop') {
+                this.$router.push({
+                    path : '/user/shop/index'
+                })
+            } else {
+                this.$tool.initToastAlert ('该专区还未开发 ～' , false, 1500)
+            }
         }
     }
 }

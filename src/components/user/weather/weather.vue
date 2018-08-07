@@ -12,7 +12,7 @@
             >
             <van-field
                 v-model="CityText"
-                label="选择城市 : "
+                label="城市 : "
                 placeholder="例如 : 北京 "
             />
             </van-dialog>

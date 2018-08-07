@@ -8,7 +8,14 @@ const state = {
     MovieTopList : [],
     MusicList : [],
     WallPaper : [],
-    DownLoadPaper : {}
+    DownLoadPaper : {},
+    Mp3Playing : false,
+    playMp3Obj : {
+        id : '',            // 歌曲id
+        index : '',         // 在列表中的下标
+        mp3_url : '',       // 播放地址
+        playing : false,    // 是否正在播放
+    }
 }
 
 const actions = {
@@ -38,6 +45,18 @@ const actions = {
 
     setDownLoadPaper ({commit}, JsonData) {
         commit (types.SET_DOWN_LOAD_PAPER, {data : JsonData})
+    },
+
+    change_music_play ({commit}) {
+        commit (types.CHANGE_MUSIC_PLAY)
+    },
+
+    change_music_pause ({commit}) {
+        commit (types.CHANGE_MUSIC_PAUSE)
+    },
+
+    track_play_music({commit}, JsonData) {
+        commit (types.TRACK_PLAY_MUSIC, {data : JsonData}) 
     }
 }
 
@@ -119,7 +138,21 @@ const mutations = {
 
     [types.SET_DOWN_LOAD_PAPER] (state, payload) {
         state.DownLoadPaper = payload.data
-        console.log(state.DownLoadPaper)
+    },
+
+    [types.CHANGE_MUSIC_PLAY] (state) {
+        state.Mp3Playing = true
+    },
+
+    [types.CHANGE_MUSIC_PAUSE] (state) {
+        state.Mp3Playing = false
+    },
+
+    [types.TRACK_PLAY_MUSIC] (state, payload) {
+        state.playMp3Obj.id = payload.data.id
+        state.playMp3Obj.index = payload.data.index
+        state.playMp3Obj.mp3_url = payload.data.mp3_url
+        state.playMp3Obj.playing = payload.data.playing
     }
 }
 

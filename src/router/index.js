@@ -23,6 +23,11 @@ import DuoMiUserGameListPage from '@/components/user/game/list'
 import DuoMiShopRoutePage from '@/components/user/shop/route'
 import DuoMiShopIndexPage from '@/components/user/shop/index'
 import DuoMiShopCommodityPage from '@/components/user/shop/commodity'
+
+// import home files
+import DuoMiCalendarPage from '@/components/home/calendar/calendar'
+import DuoMiSchedulePage from '@/components/home/calendar/schedule'
+
 Vue.use(Router)
 
 export default new Router({
@@ -34,6 +39,16 @@ export default new Router({
             meta : {
                 keepAlive : true
             }
+        },
+        {
+            path : '/duomi/calendar',
+            name : 'calendar',
+            component : DuoMiCalendarPage
+        },
+        {
+            path : '/duomi/calendar/schedule',
+            name : 'schedule',
+            component : DuoMiSchedulePage
         },
         {
             path : '/media',

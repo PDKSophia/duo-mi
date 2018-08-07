@@ -24,10 +24,8 @@
 
 ## 部分功能实现
 - [ ] 懒加载
-- [ ] 详情页回列表滚动至原位置
-- [ ] 多图上传 + 实时预览 + 删除
-- [ ] 加载更多
 - [ ] 获取天气
+- [ ] 音乐播放
 
 ## 项目环境
 > Node版本v10.0以上
@@ -60,6 +58,23 @@ http://www.pengdaokuan.cn/DuApp
     「 壁纸说明 」
     1 : 壁纸调用的是安卓壁纸接口，目前还不支持下载壁纸
 
+    「 日历说明 」
+    1 : 由于一进入就给当日一个class = 'online'， 但是每个月的当日都会存在着此class，于是这边只排除了每个月会出现的这个问题，每年的问题还是没有解决，也就是2017年的8月7日会和2018年8月7日一样，属于class = 'online' 状态
+
+    2 : 新建一个行程，应该随机给个class，并且需要在本月的日历中显示出来
+
+    「 音乐播放说明 」
+    注意 : 由于有些歌曲无版权或404找不到播放地址，所以可能会播放失败，并且可能因为网速的问题，请求获取播放的地址有些慢
+
+    1 : 播放时  ->  封面旋转  ->  播放歌曲  ->  隐藏播放icon，显示暂停icon 
+
+    2 : 暂停时  ->  封面暂停旋转  ->  停止播放  ->  隐藏暂停icon，显示播放icon
+
+    3 : 播放期间，进入其他专区，仍然照常播放音乐，并且重进 “音乐专区” ， 应处于 “ 播放时 ” 状态 
+
+    4 : 由于每次进入“ 音乐专区 ” ，获取的20首歌曲都是随机，于是这就出现，可能我播放了 a.mp3后，返回重进专区，这时候随机获取的20首歌曲，并没有这首歌，此时解决方案为 ： 播放同位置的那首歌曲
+
+    5 : 当播放 a.mp3 时，切换到 b.mp3 ，应该 a.mp3 的封面不旋转，并且显示播放icon，而 b.mp3 的封面旋转，显示暂停icon
 ```
 ### 使用
 ```javascript
@@ -94,12 +109,15 @@ http://www.pengdaokuan.cn/DuApp
 
 + 8.6 重改电影详情页的样式，新增壁纸页面，新增商城页面以及商品详情页
 
++ 8.7 完成音乐播放功能 、 实现多米日历
+
 -----
 
 ## 部分图片展示
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_15.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_11.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>

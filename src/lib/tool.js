@@ -93,12 +93,24 @@ export default {
         let arr = []
         for(let i = 0; i < count; i++) {
             let index = Math.floor(Math.random() * maxSize)
-            if(arr.indexOf(index) == 0) {
-                arr.unshift(0)
-            } else {
-                arr.push(index)
-            }
+            arr.push(index)
         }
         return arr;
+    },
+
+    /**
+     * 音乐列表的id
+    */
+    getMusicAlbumId : () => {
+        let arr = ['2341435171', '2239286898', '2342244887', '2237551001', '2141039987']
+        let index = Math.floor(Math.random() * arr.length)
+        return arr[index];
+    },
+
+    /**
+     * 截取时间
+    */
+    subdate : (time) => {
+        return time.substr(8);
     }
 }

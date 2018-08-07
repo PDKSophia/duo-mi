@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs from 'qs'
 
 const config = {
     pdk_url : 'http://www.pengdaokuan.cn/DuApp/restful/public/index.php/index/Api',
@@ -186,6 +187,9 @@ export default {
         })
     },
 
+    /**
+     * 下载手机壁纸 (废弃)
+    */
     download_wallpaper : (id) => {
         return new Promise((resolve, reject)=>{
             axios({
@@ -199,5 +203,49 @@ export default {
                 reject(err)
             })
         })
+    },
+
+    /**
+     * 获取音乐列表
+     * 引入qs模块，因为这里的请求头content-type是application/json格式，需改变
+    */
+    getMusicList : (al_id) => {
+        return new Promise((resolve, reject)=>{
+            axios.post('http://www.pengdaokuan.cn/music/restful/api/list.php', qs.stringify({
+                al_id : al_id
+            }), {
+                headers : {
+                    'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 获取某首歌曲的播放地址 (接口问题，已废弃)
+    */
+    getMp3Address : (mp3_id) => {
+        return new Promise((resolve, reject)=>{
+            axios.post('http://www.pengdaokuan.cn/music/restful/api/play.php', qs.stringify({
+                song_id : mp3_id
+            }), {
+                headers : {
+                    'Content-Type' : 'application/x-www-form-urlencoded'
+                }
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
     }
 }
+

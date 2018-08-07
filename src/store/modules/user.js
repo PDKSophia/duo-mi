@@ -32,15 +32,20 @@ const state = {
             label : '使用手册',
             type : 'handbook'
         },
-    ]
+    ],
+    ScheduleList : [] 
 }
 
 const actions = {
-
+    set_schedule_list ({commit}, JsonData) {
+        commit(types.SET_SCHEDULE_LIST, {data:JsonData})
+    }
 }
 
 const mutations = {
-
+    [types.SET_SCHEDULE_LIST] (state, payload) {
+        state.ScheduleList.push(payload.data)
+    }
 }
 
 export default {

@@ -23,13 +23,24 @@
 export default {
     methods : {
         handleCell (type) {
-            if(type == 'shop') {
-                this.$router.push({
-                    path : '/user/shop/index'
-                })
-            } else {
-                this.$tool.initToastAlert ('该专区还未开发 ～' , false, 1500)
+            let address;
+            switch(type) {
+                case 'shop' : 
+                   address = '/user/shop/index'
+                   break;
+                case 'time' : 
+                    address = '/duomi/time'
+                    break;
+                case 'calendar' :
+                    address = '/duomi/calendar'
+                    break;
+                case 'story' :
+                    address = '/duomi/story'
+                    break;
             }
+            this.$router.push({
+                path : address
+            })
         }
     }
 }

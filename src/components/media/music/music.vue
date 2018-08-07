@@ -1,7 +1,7 @@
 <template>
     <div>
         <go-back></go-back>
-        <div class="duo-mi-music" v-for="(item, index) in MusicList" :key="index">
+        <div class="duo-mi-music" v-for="(item, index) in List" :key="index">
             <div class="music-label">- 音乐 -</div>
             <div class="music-header">
                 <p class="story-title">{{ item.title }}</p>
@@ -10,10 +10,11 @@
             <div class="songlist">
                 <div class="bg-image-box">
                     <div class="image-file">
-                        <img v-lazy="item.img_url" alt="">
+                        <img :class="{'rotates' : index == playMp3Obj.index && Mp3Playing == true }" v-lazy="item.img_url" alt="">
                     </div>
-                    <div class="fixed-icon">
-                        <img src="http://image.wufazhuce.com/music-detail-play.png" alt="">
+                    <div class="fixed-icon" :id="index">
+                        <img src="http://image.wufazhuce.com/music-detail-play.png" alt="" class="play-icon" @click="handlePlayMusic(item.mp3_id, index)" />
+                        <img src="http://image.wufazhuce.com/music-detail-pause.png" alt="" class="pasue-icon" @click="handlePauseMusic(item.mp3_id, index)" />
                     </div>
                 </div>
             </div>
@@ -34,13 +35,54 @@ import { mapState, mapActions } from 'vuex'
 export default {
     components : {
         GoBack,
-        NoContent
+        NoContent,
     },
     computed : mapState({
-        MusicList : state => state.global.MusicList
+        Mp3Playing : state => state.global.Mp3Playing,
+        MusicList : state => state.global.MusicList,
+        playMp3Obj : state => state.global.playMp3Obj
     }),
+    data () {
+        return {
+            List : [],
+            frist : false,      // 为了解决重进而封面旋转问题
+        }
+    },
+    methods : {
+        ...mapActions([
+            'change_music_play',
+            'change_music_pause',
+            'track_play_music'
+        ]),
+        handlePlayMusic(mp3_id, index) {
+            this.change_music_play()
+            let jsondata = {
+                id : mp3_id,          
+                index : index,
+                mp3_url : `http://music.163.com/song/media/outer/url?id=${mp3_id}.mp3`,       
+                playing : true,    
+            }
+            let childs = event.path[1].childNodes
+            console.log(childs)
+            childs[0].classList.add('active')
+            this.track_play_music(jsondata)
+            this.frist = true
+        },
+        handlePauseMusic (mp3_id, index) {
+            console.log('暂停音乐')
+            this.change_music_pause()
+            console.log(this.Mp3Playing)
+        }
+    },
     created () {
-        
+        this.List = this.MusicList.slice()
+        let al_id = this.$tool.getMusicAlbumId()
+        this.$api.getMusicList(al_id).then((res)=>{
+            let arr = this.$tool.RandomSizeCount(this.MusicList.length, res.data.length)
+            for(let i = 0; i < arr.length; i++) {
+                this.List[i].mp3_id = res.data[arr[i]].id
+            }
+        })
     }
 }
 </script>
@@ -109,5 +151,28 @@ export default {
         line-height: 1.8rem;
         color: rgba(43, 43, 43, 0.6);
     }
+}
+.rotates {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 10s linear infinite;
+    -moz-animation: rotation 10s linear infinite;
+    -webkit-animation: rotation 10s linear infinite;
+    -o-animation: rotation 10s linear infinite;
+}
+@-webkit-keyframes rotation{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(360deg);}
+}
+.pasue-icon {
+    display: none;
+}
+.playing {
+    display: block;
+}
+.play-icon {
+    display: block;
+}
+.pausing {
+    display: none;
 }
 </style>

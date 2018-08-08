@@ -4,9 +4,9 @@
         	<img src="../../assets/tab/times.png" />
         	<p class="nav-label">多米时间</p>
         </div>
-        <div class="tabar-nav" @click="handleCell('story')">
+        <div class="tabar-nav" @click="handleCell('blog')">
         	<img src="../../assets/tab/hot.png" />
-        	<p class="nav-label">多米故事</p>
+        	<p class="nav-label">多米博客</p>
         </div>
         <div class="tabar-nav" @click="handleCell('calendar')">
         	<img src="../../assets/tab/calendar.png" />
@@ -34,8 +34,8 @@ export default {
                 case 'calendar' :
                     address = '/duomi/calendar'
                     break;
-                case 'story' :
-                    address = '/duomi/story'
+                case 'blog' :
+                    address = '/duomi/blog'
                     break;
             }
             this.$router.push({

@@ -23,10 +23,12 @@ import DuoMiUserGameListPage from '@/components/user/game/list'
 import DuoMiShopRoutePage from '@/components/user/shop/route'
 import DuoMiShopIndexPage from '@/components/user/shop/index'
 import DuoMiShopCommodityPage from '@/components/user/shop/commodity'
+import DuoMiShopContactPage from '@/components/user/contact/contact'
 
 // import home files
 import DuoMiCalendarPage from '@/components/home/calendar/calendar'
 import DuoMiSchedulePage from '@/components/home/calendar/schedule'
+import DuoMiBlogPage from '@/components/home/blog/blog'
 
 Vue.use(Router)
 
@@ -49,6 +51,11 @@ export default new Router({
             path : '/duomi/calendar/schedule',
             name : 'schedule',
             component : DuoMiSchedulePage
+        },
+        {
+            path : '/duomi/blog',
+            name : 'blog',
+            component : DuoMiBlogPage
         },
         {
             path : '/media',
@@ -158,6 +165,14 @@ export default new Router({
                             component : DuoMiShopCommodityPage
                         }
                     ]
+                },
+                {
+                    path : 'contact',
+                    name : 'contact',
+                    component : DuoMiShopContactPage,
+                    meta : {
+                        keepAlive : false
+                    }
                 }
             ]
         }

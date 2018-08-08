@@ -3,12 +3,12 @@
 > 之前版本代码比较复杂和vuex的使用比较简单，这里对之前的v1版本废弃，使用此v2版本
 
 ## 技术栈
-+ Vue-cli
-+ Vuex
-+ Vant
-+ Axios
-+ Vue-router
-+ SCSS 
++ vue-cli
++ vuex
++ vant
++ axios
++ vue-router
++ scss
 + ...
 + ...
 
@@ -19,13 +19,15 @@
 - [ ] 打卡签到，获得积分
 - [ ] 博客文章
 - [ ] 脑筋急转弯答题
-- [ ] 动态分享
 - [ ] 壁纸图片
+- [ ] 日历行程
 
-## 部分功能实现
+## 其他功能实现
 - [ ] 懒加载
 - [ ] 获取天气
 - [ ] 音乐播放
+- [ ] 新增行程
+- [ ] 博客接入
 
 ## 项目环境
 > Node版本v10.0以上
@@ -57,6 +59,9 @@ http://www.pengdaokuan.cn/DuApp
 
     「 壁纸说明 」
     1 : 壁纸调用的是安卓壁纸接口，目前还不支持下载壁纸
+
+    「 博客说明 」
+    1 : 调用的是我自己的博客，但是由于博主的博客是用hexo在自己服务器搭的，是markdown形式，并且请求的是首页，返回的是html一个页面，所以这里的数据自己手写(因为也没多少篇)，后期应该得想个办法解决这个问题
 
     「 日历说明 」
     1 : 由于一进入就给当日一个class = 'online'， 但是每个月的当日都会存在着此class，于是这边只排除了每个月会出现的这个问题，每年的问题还是没有解决，也就是2017年的8月7日会和2018年8月7日一样，属于class = 'online' 状态
@@ -111,6 +116,7 @@ http://www.pengdaokuan.cn/DuApp
 
 + 8.7 完成音乐播放功能 、 实现多米日历
 
++ 8.8 完成个人博客页面，以及联系阿宽页面
 -----
 
 ## 部分图片展示
@@ -123,12 +129,14 @@ http://www.pengdaokuan.cn/DuApp
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_14.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_16.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_17.png" height=500>
 
 ## 其他信息
 
-后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
+某些后台接口是我用TP5写的，此处仍用v1版本的接口，适当会修改
 
-API接口是在github上找的，包括QQ音乐的API也是在github上找的
+API接口是在github上找的，包括网易云的API也是在github上找的
 
 免费开源使用。
 

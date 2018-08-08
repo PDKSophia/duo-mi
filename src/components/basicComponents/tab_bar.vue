@@ -1,9 +1,9 @@
 <template>
     <div>
-        <van-tabbar v-model="active">
+        <van-tabbar >
             <van-tabbar-item icon="home" dot @click="handleToLink('', 0)">首页</van-tabbar-item>
             <van-tabbar-item icon="points" @click="handleToLink('media', 1)">书影音</van-tabbar-item>
-            <van-tabbar-item icon="contact" info="20" @click="handleToLink('user', 2)">个人</van-tabbar-item>
+            <van-tabbar-item icon="contact" info="99" @click="handleToLink('user', 2)">个人</van-tabbar-item>
         </van-tabbar>
     </div>
 </template>

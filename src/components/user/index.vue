@@ -46,7 +46,7 @@ export default {
     },
     methods : {
         handleTolink (type) {
-            if(type == 'weather' || type == 'album' || type == 'game' || type == 'shop') {
+            if(type == 'weather' || type == 'album' || type == 'game' || type == 'shop' || type == 'contact') {
                 this.$router.push({
                     path : `/user/${type}`
                 })

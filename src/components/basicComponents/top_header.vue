@@ -1,6 +1,6 @@
 <template>
     <div class="goback-header">
-        <div class="cricle-back" @click="handleGoBack">
+        <div class="cricle-back" @click="$router.go(-1)">
             <span class="back-icon"><van-icon name="arrow-left" /></span>
         </div>
     </div>
@@ -8,11 +8,7 @@
 
 <script>
 export default {
-    methods : {
-        handleGoBack () {
-            this.$router.go(-1)
-        }
-    }
+    
 }
 </script>
 

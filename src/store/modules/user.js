@@ -28,6 +28,11 @@ const state = {
             type : 'community'
         },
         {
+            icon_url : require('../../assets/cricle.png'),
+            label : '联系阿宽',
+            type : 'contact'
+        },
+        {
             icon_url : require('../../assets/detail.png'),
             label : '使用手册',
             type : 'handbook'

@@ -10,6 +10,7 @@ import DuoMiMediaMDetailPage from '@/components/media/movie/movie_detail'
 import DuoMiMediaMMorePage from '@/components/media/movie/movie_more'
 import DuoMiMediaMusicPage from '@/components/media/music/music'
 import DuoMiMediaStoryPage from '@/components/media/story/story'
+import DuoMiMediaStoryReadPage from '@/components/media/story/read'
 
 // import user files
 import DuoMiUserRoutePage from '@/components/user/route'
@@ -82,6 +83,11 @@ export default new Router({
                     path : 'story',
                     name : 'story',
                     component : DuoMiMediaStoryPage,
+                },
+                {
+                    path : 'story/read',
+                    name : 'read',
+                    component : DuoMiMediaStoryReadPage,
                 },
                 {
                     path : 'movie_detail/:m_id',

@@ -95,7 +95,7 @@ export default {
     },
 
     /**
-     * 获得one接口中的文章列表
+     * 获得one接口中的文章(阅读)列表
      * @returns {*}
     */
     onelist : () => {
@@ -108,6 +108,86 @@ export default {
                 resolve(res)
             })
             .catch((err)=> {
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 获取one最新的idlist
+     * json 字段中的 data 字段的每个值是将作为一个参数传入下个 url 中的，以获取今日或往日的 onelist 信息，data[0]是当日，data[1]昨日
+     * @returns {*}
+    */
+    get_one_new_id_list : () => {
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `${config.one_get_which_day}`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 获得onelist的天数
+     * params DayId : 传入获取哪天的onelist
+     * @returns {*}
+    */
+    getWhichDayList : (dayid) => {
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `http://v3.wufazhuce.com:8000/api/onelist/${dayid}/0?cchannel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 具体一篇文章的信息
+     * params item_id : 传入获取哪篇文章的item_id
+     * @returns {*}
+    */
+    getWhichOneStroy : (item_id) => {
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `http://v3.wufazhuce.com:8000/api/essay/${item_id}?channel=wdj&source=channel_reading&source_id=9264&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
+                reject(err)
+            })
+        })
+    },
+
+    /**
+     * 具体一篇文章的评价
+     * params item_id : 传入获取哪篇文章的item_id
+     * @returns {*}
+    */
+    getOneStoryRemak : (item_id) => {
+        return new Promise((resolve, reject) => {
+            axios({
+                method : 'get',
+                url : `http://v3.wufazhuce.com:8000/api/comment/praiseandtime/essay/${item_id}/0?channel=wdj&version=4.0.2&uuid=ffffffff-a90e-706a-63f7-ccf973aae5ee&platform=android`
+            })
+            .then((res)=>{
+                resolve(res)
+            })
+            .catch((err)=>{
                 reject(err)
             })
         })

@@ -15,7 +15,8 @@ const state = {
         index : '',         // 在列表中的下标
         mp3_url : '',       // 播放地址
         playing : false,    // 是否正在播放
-    }
+    },
+    storylist : []
 }
 
 const actions = {
@@ -37,6 +38,10 @@ const actions = {
 
     setMusicList ({commit}, JsonData) {
         commit(types.SET_ONE_MUSIC_LIST, {data: JsonData})
+    },
+
+    setStoryList ({commit}, JsonData) {
+        commit(types.SET_ONE_STORT_LIST, {data: JsonData})
     },
 
     setWallPaper ({commit}, JsonData) {
@@ -112,6 +117,7 @@ const mutations = {
     [types.SET_ONE_MUSIC_LIST] (state, payload) {
         payload.data.map((item)=>{
             state.MusicList.push({
+                id : item.id,
                 title : item.title,
                 author : item.author.user_name,
                 forward : item.forward,
@@ -119,6 +125,22 @@ const mutations = {
                 post_date : ((item.post_date).substring(0, 10)).replace(/'-'/g, '/'),
                 item_id : item.item_id,
                 volume : item.item_id
+            })
+        })
+    },
+
+    [types.SET_ONE_STORT_LIST] (state, payload) {
+        payload.data.map((item) => {
+            state.storylist.push({
+                id : item.id,
+                title : item.title,
+                author : item.author.user_name,
+                forward : item.forward,
+                img_url : item.img_url,
+                post_date : ((item.post_date).substring(0, 10)).replace(/'-'/g, '/'),
+                item_id : item.item_id,
+                volume : item.item_id,
+                share_url : item.share_url
             })
         })
     },

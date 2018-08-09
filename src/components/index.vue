@@ -101,19 +101,33 @@ export default {
     },
     data () {
         return {
-            value : ''
+            value : '',
+            ArrList : []
         }
     },
     methods : {
         ...mapActions([
             'setMusicList',
-            'setWallPaper'
+            'setWallPaper',
+            'setStoryList'
         ]),
         initApiAxios () {
             this.$api.onelist().then((res1)=>{
                 this.$api.onemusiclist().then((res2)=>{
                     this.setMusicList(res2.data.data.concat(res1.data.data))
                 })
+            })
+            this.$api.get_one_new_id_list().then((res)=>{
+                for(let i = 0; i < res.data.data.length; i++) {
+                    this.$api.getWhichDayList(res.data.data[i]).then((res)=>{
+                        for(let j = 0; j < res.data.data.content_list.length; j++) {
+                            this.ArrList.push(res.data.data.content_list[j])
+                        }
+                    })
+                }
+                setTimeout(()=>{
+                    this.setStoryList(this.ArrList)
+                }, 1500)
             })
             this.$api.getWallPaper('/wallpaper/category?adult=false&first=1').then((res)=>{
                 this.setWallPaper(res.data.res.category)

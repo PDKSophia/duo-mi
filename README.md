@@ -68,6 +68,9 @@ http://www.pengdaokuan.cn/DuApp
 
     2 : 新建一个行程，应该随机给个class，并且需要在本月的日历中显示出来
 
+    「 阅读文章详情说明 」 
+    1 : 使用了v-html绑定父文本生成的HTML内容，但是发现CSS样式根本不生效，选择器没起作用，也就是说定义的css居然无效。由于scoped属性导致css仅对当前组件生效（用css3的属性选择器+生成的随机属性实现的），而html绑定渲染出的内容可以理解为是子组件的内容，子组件不会被加上对应的属性，所以不会应用css。这时候只要把 scoped 这属性去除就好
+
     「 音乐播放说明 」
     注意 : 由于有些歌曲无版权或404找不到播放地址，所以可能会播放失败，并且可能因为网速的问题，请求获取播放的地址有些慢
 
@@ -117,6 +120,9 @@ http://www.pengdaokuan.cn/DuApp
 + 8.7 完成音乐播放功能 、 实现多米日历
 
 + 8.8 完成个人博客页面，以及联系阿宽页面
+
++ 8.9 获取每日one列表，完成阅读界面
+
 -----
 
 ## 部分图片展示
@@ -125,6 +131,7 @@ http://www.pengdaokuan.cn/DuApp
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_15.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_19.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_11.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>
 <img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_14.png" height=500>

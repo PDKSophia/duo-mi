@@ -2,10 +2,10 @@
     <div>
         <div class="user-header">
             <div class="bg-mask">
-                <img src="http://image.wufazhuce.com/FpebHlW68X5IoBuyB9CjUcNkVGui" class="avatar-image" alt="avatar" >
+                <img src="http://image.wufazhuce.com/FpDFJvp0fV-IjfgCrcO6eM0pMqwz" class="avatar-image" alt="avatar" >
             </div>
             <div class="avatar-username">
-                <img src="http://image.wufazhuce.com/FpebHlW68X5IoBuyB9CjUcNkVGui" class="avatar-image" alt="avatar" >
+                <img src="http://image.wufazhuce.com/FpmFkyrGEYx6wfGqArTDZJ3RaDz4" class="avatar-image" alt="avatar" >
                 <p class="username">彭道宽</p>
             </div>
             <div class="ability-box">
@@ -90,7 +90,7 @@ export default {
         p.username {
             font-size: 1.1rem;
             margin-top: .8rem;
-            color: #333;
+            color: #111;
         }
     }
     .flex-box {

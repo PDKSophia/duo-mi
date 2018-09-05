@@ -20,7 +20,7 @@ export default {
         DataList : {
             type : Array,
             default : [{
-                pic : require('../../assets/img/tv1.jpeg'),
+                pic : '',
                 title : '行尸走肉第八季',
                 score : 9.6
             }]

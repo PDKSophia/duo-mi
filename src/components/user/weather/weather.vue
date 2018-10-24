@@ -55,6 +55,7 @@ export default {
         CityApi (datas) {
             console.log('请求数据，获取 : ' + datas.city + '天气')
             this.$api.getCityWeather(`/m_api/app/weather/listWeather?cityIds=${datas.cityid}`).then((res)=>{
+            // this.$api.getCityWeather(`/app/weather/listWeather?cityIds=${datas.cityid}`).then((res)=>{
                 if(res.code == 200) {
                     this.setCityWeatherData(res.value)
                 } else {

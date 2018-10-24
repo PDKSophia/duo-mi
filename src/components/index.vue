@@ -1,98 +1,114 @@
 <template>
-    <div>
-        <div class="dm-search">
-            <van-search placeholder="搜索热门内容" @search="onSearch" v-model="value" />
+  <div>
+    <div class="dm-search">
+      <van-search placeholder="搜索热门内容" @search="onSearch" v-model="value" />
+    </div>
+    <div class="dm-story">
+      <!-- <a href="https://github.com/PDKSophia" target="_blank"> -->
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
         </div>
-        <div class="dm-story">
-            <a href="https://github.com/PDKSophia" target="_blank">
-                <div class="dm-content">
-                    <div class="dm-cover">
-                        <img src="../assets/img/art4.jpeg">
-                    </div>
-                    <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
-                    <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
-                </div>
-                <div class="md-author">
-                    <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
-                    <span class="right_label">Github | PDKSophia</span>
-                </div>
-            </a>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
         </div>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <flex-cell></flex-cell>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <div class="dm-story">
-            <a href="https://github.com/PDKSophia" target="_blank">
-                <div class="dm-content">
-                    <div class="dm-cover">
-                        <img src="../assets/img/art4.jpeg">
-                    </div>
-                    <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
-                    <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
-                </div>
-                <div class="md-author">
-                    <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
-                    <span class="right_label">Github | PDKSophia</span>
-                </div>
-            </a>
+      <!-- </a> -->
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <flex-cell></flex-cell>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <div class="dm-story">
+      <!-- <a href="https://github.com/PDKSophia" target="_blank"> -->
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
         </div>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <div class="dm-story">
-            <a href="https://github.com/PDKSophia" target="_blank">
-                <div class="dm-content">
-                    <div class="dm-cover">
-                        <img src="../assets/img/art4.jpeg">
-                    </div>
-                    <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
-                    <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
-                </div>
-                <div class="md-author">
-                    <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
-                    <span class="right_label">Github | PDKSophia</span>
-                </div>
-            </a>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
         </div>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <div class="dm-story">
-            <a href="https://github.com/PDKSophia" target="_blank">
-                <div class="dm-content">
-                    <div class="dm-cover">
-                        <img src="../assets/img/art4.jpeg">
-                    </div>
-                    <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
-                    <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
-                </div>
-                <div class="md-author">
-                    <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
-                    <span class="right_label">Github | PDKSophia</span>
-                </div>
-            </a>
+      <!-- </a> -->
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <div class="dm-story">
+      <!-- <a href="https://github.com/PDKSophia" target="_blank"> -->
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
         </div>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <div class="dm-story last-story">
-            <a href="https://github.com/PDKSophia" target="_blank">
-                <div class="dm-content">
-                    <div class="dm-cover">
-                        <img src="../assets/img/art4.jpeg">
-                    </div>
-                    <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
-                    <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
-                </div>
-                <div class="md-author">
-                    <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
-                    <span class="right_label">Github | PDKSophia</span>
-                </div>
-            </a>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
         </div>
-        <div style="height:.5rem;background:#efeff4"></div>
-        <footer-tab-bar></footer-tab-bar>
+      <!-- </a> -->
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <div class="dm-story">
+      <a href="https://github.com/PDKSophia" target="_blank">
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
+        </div>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
+        </div>
+      </a>
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <div class="dm-story">
+      <!-- <a href="https://github.com/PDKSophia" target="_blank"> -->
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
+        </div>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
+        </div>
+      <!-- </a> -->
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <div class="dm-story last-story">
+      <!-- <a href="https://github.com/PDKSophia" target="_blank"> -->
+        <div class="dm-content">
+          <div class="dm-cover">
+            <img src="../assets/img/art4.jpeg">
+          </div>
+          <h3 class="dm-title">面试总结 | 七牛云与京东的面试</h3>
+          <p class="forward">大三，专业为软件工程，自学前端与后端差不多一年，由于大三很多小伙伴都外出实习，于是 “ 博主 ” 也想投简历试试，如果运气好，没准能得个offer ?  事实证明，运气还是差了点...</p>
+        </div>
+        <div class="md-author">
+          <i class="fa fa-graduation-cap" style="color:#88d356"></i><span class="name">BY 彭道宽</span>
+          <span class="right_label">Github | PDKSophia</span>
+        </div>
+      <!-- </a> -->
+    </div>
+    <div style="height:.5rem;background:#efeff4"></div>
+    <footer-tab-bar></footer-tab-bar>
     </div>
 </template>
 
 <script>
 import FlexCell from './basicComponents/flex_cell'
 import FooterTabBar from './basicComponents/tab_bar'
-import { mapState, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
     components : {

@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- <p>{{ Mp3Playing }}</p> -->
         <audio :src="playMp3Obj.mp3_url" controls="controls" v-show="isHide" loop="loop" preload="auto" ref="audio"></audio>
     </div>
 </template>

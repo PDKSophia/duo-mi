@@ -1,48 +1,48 @@
 <template>
-    <div class="dm-flex-cell">
-        <div class="tabar-nav" @click="handleCell('time')">
-        	<img src="../../assets/tab/times.png" />
-        	<p class="nav-label">多米时间</p>
-        </div>
-        <div class="tabar-nav" @click="handleCell('blog')">
-        	<img src="../../assets/tab/hot.png" />
-        	<p class="nav-label">多米博客</p>
-        </div>
-        <div class="tabar-nav" @click="handleCell('calendar')">
-        	<img src="../../assets/tab/calendar.png" />
-        	<p class="nav-label">多米日历</p>
-        </div>
-        <div class="tabar-nav" @click="handleCell('shop')">
-        	<img src="../../assets/tab/shop.png" />
-        	<p class="nav-label">多米商场</p>
-        </div>
+  <div class="dm-flex-cell">
+    <div class="tabar-nav" @click="handleCell('time')">
+      <img src="../../assets/tab/times.png" />
+      <p class="nav-label">多米时间</p>
+    </div>
+    <div class="tabar-nav" @click="handleCell('blog')">
+      <img src="../../assets/tab/hot.png" />
+      <p class="nav-label">多米博客</p>
+    </div>
+    <div class="tabar-nav" @click="handleCell('calendar')">
+      <img src="../../assets/tab/calendar.png" />
+      <p class="nav-label">多米日历</p>
+    </div>
+    <div class="tabar-nav" @click="handleCell('shop')">
+      <img src="../../assets/tab/shop.png" />
+      <p class="nav-label">多米商场</p>
+    </div>
     </div>
 </template>
 
 <script>
 export default {
-    methods : {
-        handleCell (type) {
-            let address;
-            switch(type) {
-                case 'shop' : 
-                   address = '/user/shop/index'
-                   break;
-                case 'time' : 
-                    address = '/duomi/time'
-                    break;
-                case 'calendar' :
-                    address = '/duomi/calendar'
-                    break;
-                case 'blog' :
-                    address = '/duomi/blog'
-                    break;
-            }
-            this.$router.push({
-                path : address
-            })
-        }
+  methods: {
+    handleCell (type) {
+      let address
+      switch(type) {
+        case 'shop' : 
+          address = '/user/shop/index'
+          break
+        case 'time' : 
+          address = '/duomi/time'
+          break
+        case 'calendar' :
+          address = '/duomi/calendar'
+          break
+        case 'blog' :
+          address = '/duomi/blog'
+          break
+      }
+      this.$router.push({
+        path: address
+      })
     }
+  }
 }
 </script>
 

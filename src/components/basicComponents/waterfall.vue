@@ -21,7 +21,9 @@ export default {
     props : {
         defaultData : {
             type : Array,
-            default : {}
+            default () {
+                return []
+            }
         }
     },
     data () {

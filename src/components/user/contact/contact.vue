@@ -77,7 +77,7 @@
                             </div>
                             <div class="h_content">
                                 <div class="h_left"><i class="fa fa-unlink"></i></div>
-                                <div class="h_right"><a href="http://zhaike.pengdaokuan.cn/YunResume" target="_blank">云简历平台 : http://zhaike.pengdaokuan.cn/YunResume</a></div>
+                                <div class="h_right"><a href="http://zhaike.pengdaokuan.cn/YunResume" target="_blank">云简历平台 : http://yun.pengdaokuan.cn/YunResume</a></div>
                             </div>
                             <div class="h_content">
                                 <div class="h_left"><i class="fa fa-unlink"></i></div>
@@ -88,8 +88,12 @@
                                 <div class="h_right"><a href="http://www.pengdaokuan.cn/DuApp" target="_blank">嘟嘟v1版本 : http://www.pengdaokuan.cn/DuApp</a></div>
                             </div>
                             <div class="h_content">
-                                <div class="h_left"><i class="fa fa-envelope-o"></i></div>
-                                <div class="h_right"><a href="http://zhaike.pengdaokuan.cn" target="_blank">宅客 : http://zhaike.pengdaokuan.cn</a></div>
+                                <div class="h_left"><i class="fa fa-unlink"></i></div>
+                                <div class="h_right"><a href="http://duomi.pengdaokuan.cn/duomi" target="_blank">多米 : http://duomi.pengdaokuan.cn/duomi</a></div>
+                            </div>
+                            <div class="h_content">
+                                <div class="h_left"><i class="fa fa-unlink"></i></div>
+                                <div class="h_right"><a href="http://www.pengdaokuan.cn/ErekEditor" target="_blank">ErekEditor : http://www.pengdaokuan.cn/ErekEditor</a></div>
                             </div>
                         </div>
                     </div>

@@ -17,21 +17,21 @@
 + ...
 
 ## 目标功能
-- ✅ 热门电影排行
-- ✅ 音乐播放
-- ✅ 查询天气
-- ✅ 打卡签到，获得积分
-- ✅ 博客文章
-- ✅ 脑筋急转弯答题
-- ✅ 壁纸图片
-- ✅ 日历行程
+- [x] 热门电影排行
+- [x] 音乐播放
+- [x] 查询天气
+- [x] 打卡签到，获得积分
+- [x] 博客文章
+- [x] 脑筋急转弯答题
+- [x] 壁纸图片
+- [x] 日历行程
 
 ## 其他功能实现
-- 💭 懒加载
-- 💭 获取天气
-- 💭 音乐播放
-- 💭 新增行程
-- 💭 博客接入
+- [x] 懒加载
+- [x] 获取天气
+- [x] 音乐播放
+- [x] 新增行程
+- [x] 博客接入
 
 ## 项目环境
 
@@ -51,7 +51,20 @@ v1 low B 版本就看这里 [DuApp](https://github.com/PDKSophia/DuApp)
     3 : 抛弃v1版本采用ydui的框架，v2版本采用Vant UI框架
 
     4 : 抽离api接口，对vuex模块化管理
+```
 
+## 使用
+
+```javascript
+ 1 : git clone          // 克隆项目
+
+ 2 : cd duo-mi          // 进入目录
+
+ 3 : npm install        // 安装依赖
+
+ 4 : npm run serve      // 启动
+
+ [ 注意 ] ：端口修改在vue.config.js中，这里的端口号是3750
 ```
 
 ## 其他说明
@@ -89,19 +102,21 @@ v1 low B 版本就看这里 [DuApp](https://github.com/PDKSophia/DuApp)
 
     5 : 当播放 a.mp3 时，切换到 b.mp3 ，应该 a.mp3 的封面不旋转，并且显示播放icon，而 b.mp3 的封面旋转，显示暂停icon
 ```
-### 使用
 
-```javascript
- 1 : git clone          // 克隆项目
+## 部分图片展示
 
- 2 : cd duo-mi          // 进入目录
-
- 3 : npm install        // 安装依赖
-
- 4 : npm run serve      // 启动
-
- [ 注意 ] ：端口修改在vue.config.js中，这里的端口号是3750
-```
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_15.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_19.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_11.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_14.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_16.png" height=500>
+<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_17.png" height=500>
 
 ### 更新阶段 (由于还要上班以及其他事情，所以重构进度稍微有点慢)
 
@@ -119,9 +134,9 @@ v1 low B 版本就看这里 [DuApp](https://github.com/PDKSophia/DuApp)
 
 + 2018.7.26 新增游戏页面，相册专辑页面
 
-+ 2018.7.27 - 2018.8.1 准备一家公司的面试以及博客的搭建和写文章 (个人博客地址在下边)
++ 2018.7.27 - 2018.8.1 准备某一家公司的面试以及博客的搭建和写文章 
 
-+ 2018.8.2 - 2018.8.5 二面依图，给自己休息放假两天
++ 2018.8.2 - 2018.8.5 二面依图，面试准备及复盘
 
 + 2018.8.6 重改电影详情页的样式，新增壁纸页面，新增商城页面以及商品详情页
 
@@ -131,23 +146,7 @@ v1 low B 版本就看这里 [DuApp](https://github.com/PDKSophia/DuApp)
 
 + 2018.8.9 获取每日one列表，完成阅读界面
 
-+ 2018.8.10 看《图解算法》， 准备8.11的网易笔试，今日不打卡
 -----
-
-## 部分图片展示
-
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_2.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_5.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_7.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_15.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_8.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_19.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_11.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_12.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_14.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_3.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_16.png" height=500>
-<img src="https://github.com/PDKSophia/duo-mi/raw/master/image/d_17.png" height=500>
 
 ## 其他信息
 
@@ -162,5 +161,7 @@ API接口是在github上找的，包括网易云的API也是在github上找的
 All rights reserved。
  
 ## 相关链接
+
+博客 : https://github.com/PDKSophia/blog.io
 
 掘金 : https://juejin.im/user/594ca8a35188250d892f4139
